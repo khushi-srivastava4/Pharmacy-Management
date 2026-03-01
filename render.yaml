@@ -10,8 +10,9 @@ services:
       mountPath: /data
       sizeGB: 1
 
-  - type: static_site
+  - type: web
     name: pharmacy-frontend
+    env: static
     rootDir: frontend
     buildCommand: npm install && npm run build
-    publishDir: build
+    staticPublishPath: build
