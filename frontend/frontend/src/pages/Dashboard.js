@@ -178,7 +178,7 @@ function Dashboard({ refreshFlag }) {
 
       {/* SALES SECTION BELOW DASHBOARD */}
       <div style={{ marginTop: "40px" }}>
-        <Sales />
+        <Sales onSaleSuccess={fetchDashboard}  />
       </div>
 
     </div>

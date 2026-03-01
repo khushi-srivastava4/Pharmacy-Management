@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../api";
 import "../App.css";
 
-function Sales() {
+function Sales({onSaleSuccess} ) {
   const [medicines, setMedicines] = useState([]);
   const [selectedMed, setSelectedMed] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -36,23 +36,29 @@ function Sales() {
     setQuantity("");
   };
 
-  const submitSale = () => {
-    bill.forEach(item => {
-      api.post("/sales", {
-        medicine_id: item.id,
-        medicine_name: item.name,
-        quantity: item.qty,
-        price: item.price
-      })
-      .catch(err => {
-        console.log(err);
-        setError("Sale failed");
-      });
-    });
+  const submitSale = async () => {
+  try {
+    await Promise.all(
+      bill.map(item =>
+        api.post("/sales", {
+          medicine_id: item.id,
+          medicine_name: item.name,
+          quantity: item.qty,
+          price: item.price
+        })
+      )
+    );
 
     alert("Sale completed");
     setBill([]);
-  };
+
+    onSaleSuccess();   // 
+
+  } catch (err) {
+    console.log(err);
+    setError("Sale failed");
+  }
+};
 
  return (
   <div className="sales-section">
