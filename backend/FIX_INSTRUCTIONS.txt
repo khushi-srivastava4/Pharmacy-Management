@@ -1,0 +1,26 @@
+===========================================
+FIX INSTRUCTIONS - FOLLOW THESE STEPS
+===========================================
+
+1. STOP the backend server completely:
+   - Find the terminal where uvicorn is running
+   - Press Ctrl+C
+   - Wait 5 seconds
+
+2. CLEAR cache (already done, but do this to be sure):
+   - Run: Remove-Item -Recurse -Force __pycache__
+
+3. START the backend server:
+   - Run: uvicorn main:app --reload --port 8001
+   - Wait until you see "Application startup complete"
+
+4. TEST by adding a medicine in the frontend
+
+The schema is now correct - it only requires:
+- name
+- quantity  
+- expiry_date
+
+Status is calculated automatically by the backend.
+
+===========================================
