@@ -493,8 +493,8 @@ http://localhost:3000
 ---
 
 ## LIVE URL
-https://pharmacy-management-frontend-ukjb.onrender.com/
-
+Frontend: https://pharmacy-management-frontend-ukjb.onrender.com
+Backend: https://pharmacy-management-1-yrxv.onrender.com
 ## 🎯 Key Learnings
 
 Through this project, I gained hands-on experience with:
