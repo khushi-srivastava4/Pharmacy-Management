@@ -50,7 +50,8 @@ A full-stack Pharmacy CRM built using FastAPI + React to manage inventory, sales
 - SQLite
 
 ---
-
+## LIVE URL:
+https://pharmacy-management-frontend-ukjb.onrender.com/
 ##  Setup Instructions
 
 ###  Clone the repo
